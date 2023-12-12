@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+
+class Queue{
+public:
+const static int size = 10;
+int start = -1;
+int end = -1;
+int array[size];
+void Push(int x){
+    if (end ==size-1){
+        cout<<"the queue is  overflow";
+    }
+    array[++end]= x;
+}
+int Pop()
+{
+    if (start == end){
+        cout<<"queue is underflow"<<endl;
+    }
+     array[++start] ;
+     return -1;
+}
+void display(){
+    if (start == end){
+        cout<<"queue is empty";
+    }
+    cout<<"Queue contains : ";
+    for (int i=start+1;i<=end;i++){
+        cout<<array[i]<<" ";
+
+    }
+    cout<<endl;
+}
+};
+void add_job(Queue &q, int job){
+    q.Push(job);
+}
+void delete_job(Queue &q){
+    q.Pop();
+}
+
+int main(){
+    Queue job_line;
+    add_job(job_line, 1);
+    add_job(job_line, 10);
+    add_job(job_line, 100);
+    add_job(job_line, 1000);
+
+    job_line.display();
+    delete_job(job_line);
+    job_line.display();
+}
