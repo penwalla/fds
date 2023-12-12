@@ -1,0 +1,45 @@
+union = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+cricket = [1,2,3,4,5]
+Batmintion = [3,4,5,6,7,8,9,10]
+football = [8,9,10,11,12,13,14]
+
+list1 =[]
+for i in cricket:
+    if i in Batmintion:
+        list1.append(i)
+print("no of student who play cricket and batmintion both",list1)                
+
+list2 = []
+for i in cricket:
+    if i not in Batmintion:
+        list2.append(i)
+for i in Batmintion:
+    if i not in cricket:
+        list2.append(i)
+print("either cricket or batmintion",list2)                
+
+list3 = []
+list3 = cricket.copy()
+for i in Batmintion:
+    if i not in list3:
+        list3.append(i)
+#print("list3",list3)         
+
+list4 = []
+for i in union:
+    if i not in list3:
+        list4.append(i)
+print ("student who nither play cricket or batmintion",list4)
+
+list5 = []
+list5 = cricket.copy()
+for i in football:
+    if i not in list5:
+        list5.append(i)
+#print(list5)
+
+list6 = []
+for i in list5:
+    if i not in Batmintion:
+        list6.append(i)
+print("the student play cricket and footbal not batmintion",list6)
