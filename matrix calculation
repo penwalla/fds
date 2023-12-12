@@ -1,0 +1,58 @@
+matrixA = [[0,0],[0,0]]
+for i in range(len(matrixA)):
+    for j in range(len(matrixA)):
+        num=int(input("enter elements="))
+        matrixA[i][j]=num
+print("matrix A=")        
+for i in range(len(matrixA)):   
+    print(matrixA[i])   
+
+#matrixB = [[4,5],[6,7]] 
+matrixB = [[0,0],[0,0]]
+for i in range(len(matrixA)):
+    for j in range(len(matrixA)):
+        num=int(input("enter elements="))
+        matrixB[i][j]=num
+print("matrix B=")        
+for i in range(len(matrixB)):   
+    print(matrixB[i])
+result_matrix = [[0,0],[0,0]]
+print("matrix b=")
+
+
+for i in range(len(matrixB)):
+    print("Matrix B is =",matrixB[i])
+#addition of matrices
+print("addition of two matrices =")
+for i in range(len(matrixA)):
+    for j in range(len(matrixB)):
+        result_matrix[i][j] = matrixA[i][j] + matrixB[i][j]
+for i in range(len(matrixA)):
+    print(result_matrix[i],"\n")
+
+
+#substraction of matrix
+print("Substraction of two matrices =")
+for i in range(len(matrixA)):
+    for j in range(len(matrixB)):
+        result_matrix[i][j] = matrixA[i][j] - matrixB[i][j]
+for i in range(len(matrixA)):
+    print(result_matrix[i])
+
+
+#multiplication of matrix:
+print("multiplication of matrices =")
+for i in range(2):
+    for j in range(2):
+        for k in range(2):
+            result_matrix[i][j] += matrixA[i][k] * matrixB[k][j]
+for i in range(len(result_matrix)):
+    print(result_matrix[i])
+
+#transpose of matrix B
+print("the transpose of matrix is = ")
+for i in range(len(matrixB)):
+    for j in range(len(matrixB[0])):
+        result_matrix[i][j] = matrixB[j][i]
+for i in range(len(result_matrix)):        
+     print(result_matrix[i])
