@@ -1,0 +1,45 @@
+nums = []
+n = int(input("enter the number of element in the unsorted list : "))
+for i in range(n):
+    a = int(input("enter the element in unsorted array: "))
+    nums.append(a)
+print("the unsorted array is : ",nums)
+
+
+
+
+print("1.bubble sort \n2.selection sort")
+choice = int(input("enter the choice : "))
+
+if choice == 1:
+
+    def bubblesort(nums):
+
+        for i in range(len(nums)-1,0,-1):
+            for j in range(i):
+                if nums[j]>nums[j+1]:
+                    temp =nums[j]
+                    nums[j]=nums[j+1]
+                    nums[j+1] =temp
+    bubblesort(nums)
+    print("the sorted array is : ",nums) 
+
+if choice == 2:                
+#selection sort
+    def sort(nums):
+        for i in range(len(nums)-1):
+            minpose = i
+            for j in range(i,len(nums)):
+                if nums[j]<nums[minpose]:
+                    minpose = j
+            
+            temp = nums[i]
+            nums[i]=nums[minpose]
+            nums[minpose] = temp
+            
+            #print(nums)
+            
+
+    sort(nums)
+    print(nums)
+                
